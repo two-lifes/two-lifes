@@ -30,14 +30,28 @@ Outside the web I work with microcontrollers (**ESP**, **Arduino**) and the **CA
 | | |
 |---|---|
 | **Web** | TypeScript · JavaScript · React · Redux Toolkit · RTK Query · Apollo GraphQL · REST · WebSocket · HTML · SCSS · Vue · Astro · Tailwind |
-| **Embedded** | ESP · Arduino (C/C++) · CAN bus |
+| **Embedded** | C++ · CMake · ESP32 · STM32 · Arduino · CAN bus · Linux SocketCAN |
 | **Radio / DSP** | LimeSDR Mini · GNU Radio (learning) |
 | **Scripting** | Python |
-| **Tooling** | Git · Docker · GitLab CI/CD · Linux · Node.js |
+| **Backend** | Node.js · Fastify · Next.js · Prisma · Drizzle · SQLite |
+| **Testing** | Vitest · Playwright |
+| **Tooling** | Git · Docker · GitLab CI/CD · GitHub Actions · Linux |
 
 ---
 
 ## 🌱 Projects
+
+### [CANSIM](https://github.com/two-lifes/CANSIM)
+Bit-level CAN network simulator: own bus with wired-AND arbitration, CRC-15, bit stuffing, ACK, TEC/REC error counters and error-active → error-passive → bus-off transitions. Each ECU runs as a separate process; delivered frames are mirrored to `vcan0` so `candump` / `cansend` work. Web UI per ECU: attach sensors, compute values by formula, transmit on the bus.
+`C++` `CMake` `SocketCAN` `JavaScript` `Electron`
+
+### [Dependency Radar](https://github.com/two-lifes/dependency-radar) · [live demo](https://dependency-radar-livid.vercel.app)
+Paste a package.json or a GitHub URL and get an upgrade plan: outdated, vulnerable and breaking npm dependencies. Data from npm registry, OSV.dev and GitHub.
+`Next.js` `TypeScript` `Drizzle` `Vitest` `Playwright` `GitHub Actions`
+
+### [Lexio](https://github.com/two-lifes/english-teacher)
+Full-stack English vocabulary trainer: SM-2 spaced repetition, a ~9,000-word dictionary imported from open datasets, OpenAI-generated exercises with answer review, SVG charts. Deployed to a VPS via GitHub Actions over SSH.
+`React 19` `Vite` `Tailwind` `Fastify` `Prisma` `SQLite` `OpenAI API`
 
 ### [Disassembled Site](https://github.com/two-lifes/disassembled-site)
 A portfolio that takes itself apart layer by layer as you scroll — grid, design tokens, components, motion, accessibility — and reassembles at the end.
